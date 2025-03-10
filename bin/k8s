@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+project_root=$(cd $(dirname $0)/..; pwd)
+
+exec cargo run --quiet --manifest-path "$project_root/Cargo.toml" --bin k8s -- "$@"
