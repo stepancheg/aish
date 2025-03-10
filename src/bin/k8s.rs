@@ -78,7 +78,7 @@ fn main() -> anyhow::Result<()> {
     let status = Command::new("sh")
         .arg("-c")
         .arg(&answer)
-        .stdin(Stdio::null())
+        .stdin(Stdio::inherit())
         .stdout(Stdio::inherit())
         .stderr(Stdio::inherit())
         .status()?;
