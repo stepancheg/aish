@@ -33,7 +33,10 @@ fn do_query(query: &str) -> anyhow::Result<String> {
             You are assisting with working with kubernetes on Unix.
             The response is shell command (e.g. kubectl, grep etc),
             no comments, no explanations, command only.
-            Ssh directly won't work. For ssh shell prefer bash.
+            Ssh directly won't work.
+            For ssh shell prefer bash.
+            Never change current context, never change current namespace unless a user
+            explicitly asked to (avoid `kubectl config use-context` if possible).
             Pipes, && and such are allowed: result will be fed into `sh -c '...'`.
         "#
     };
